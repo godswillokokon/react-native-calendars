@@ -111,7 +111,7 @@ const ExpandableCalendar = (props: ExpandableCalendarProps) => {
     openThreshold = PAN_GESTURE_THRESHOLD,
     closeThreshold = PAN_GESTURE_THRESHOLD,
     closeOnDayPress = true,
-    sixWeeksHeight = 150,
+    sixWeeksHeight = 46,
 
     /** CalendarList props */
     horizontal = true,

@@ -129,44 +129,6 @@ const ExpandableCalendar = (props: ExpandableCalendarProps) => {
   } = props;
 
   const [screenReaderEnabled, setScreenReaderEnabled] = useState(false);
-  const isSixWeeksMonth = dateString => {
-    // Create a Date object for the first day of the month
-    const firstDayOfMonth = new Date(dateString);
-    firstDayOfMonth.setDate(1);
-  
-    // Create a Date object for the last day of the month
-    const lastDayOfMonth = new Date(dateString);
-    lastDayOfMonth.setMonth(lastDayOfMonth.getMonth() + 1);
-    lastDayOfMonth.setDate(0);
-  
-    // Calculate the day of the week for the first and last day of the month
-    const startDay = firstDayOfMonth.getDay();
-    const endDay = lastDayOfMonth.getDay();
-  
-    // Calculate the total number of days in the month
-    const totalDaysInMonth = lastDayOfMonth.getDate();
-  
-    // Calculate the number of days in the first week
-    const daysInFirstWeek = 7 - startDay;
-  
-    // Calculate the number of remaining days after the first week
-    const remainingDays = totalDaysInMonth - daysInFirstWeek;
-  
-    // Calculate the number of full weeks after the first week
-    const fullWeeks = Math.floor(remainingDays / 7);
-  
-    // Calculate the number of days in the last week
-    const daysInLastWeek = remainingDays % 7;
-  
-    // Total weeks = 1 (first week) + fullWeeks + (1 if there's a partial last week)
-    const totalWeeks = 1 + fullWeeks + (daysInLastWeek > 0 ? 1 : 0);
-  
-    return totalWeeks === 6;
-  };
-  
-
-  // const weekHeight = isSixWeeksMonth(date) ? sixWeeksHeight : WEEK_HEIGHT
-  
 
   /** Date */
 
